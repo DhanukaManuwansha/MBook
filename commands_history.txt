@@ -1,0 +1,16 @@
+ 1000  open .
+ 1001  docker ps 
+ 1002  docker ps 
+ 1003  docker ps a-
+ 1004  docker ps -a
+ 1005  docker images
+ 1006  cd go/src/NobleTec/MedBook/MedBookServer
+ 1007  make postgress
+ 1008  clear
+ 1009  docker ps 
+ 1010  docker ps -a
+ 1011  docker exec -it 907e328651dc bash
+ 1012  docker run --name medbookpsqlsvr -p 5432\:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=Medbook@1234NTEC -d postgres\:14.2-alpine
+ 1013  docker stop 907e328651dc
+ 1014  docker start 907e328651dc
+ 1015  docker exec -it 907e328651dc bash

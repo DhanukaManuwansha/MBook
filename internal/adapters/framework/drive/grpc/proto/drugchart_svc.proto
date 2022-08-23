@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+import "drugchart_attributes.proto";
+
+option go_package = "./pb";
+ 
+service DrugChartService{
+
+    rpc GetDrugChart(GetDrugChartParameters) returns (DrugChartResult){}
+    rpc GetDrugChartList(GetDrugChartParameters) returns (DrugChartResultForDashBoard){}
+    rpc GetDrugChartListForNurseDesk(DrugChartForNurseDesktParam) returns (DrugChartForNurseDeskResultList){}
+    
+
+
+}

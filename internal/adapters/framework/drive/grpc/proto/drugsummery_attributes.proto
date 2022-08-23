@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message GetDrugSummeryParameters{
+    string patientId = 1;
+}
+
+message DrugSummeryResult{
+    int64 drugsummery_id = 1;
+    string summery_date = 2;
+    bool summery_status = 3;
+    int64 drugorder_id = 4;
+    string patient_id = 5;
+    
+    
+}
+
+message DrugSummeryOfADrugResult{
+    string drugName =1;
+    string dose = 2;
+    string dosage = 3;
+    int32 frequency = 4;
+    string givenDate =5;
+    string giveUntill=6;
+    int64 drugsummery_id = 7;
+    string summery_date = 8;
+    bool summery_status = 9;
+    int32 firstDoseStatus=10;
+    int32 secondDoseStatus=11;
+    int32 thirdDoseStatus=12;
+    int32 fourthDoseStatus=13;
+    int64 drugorder_id = 14;
+    string patient_id = 15;
+    
+}
+
+message DrugSummeryUpdateParam{
+    int64 drugsummery_id = 1;
+    string summery_date = 2;
+    bool summery_status = 3;
+    int64 drugorder_id = 4;
+    string patient_id = 5;
+    int32 firstDoseStatus=6;
+    int32 secondDoseStatus=7;
+    int32 thirdDoseStatus=8;
+    int32 fourthDoseStatus=9;
+    
+}
+
+message DrugSummeryUpdateResult{
+    int64 drugsummery_id = 1;
+    string summery_date = 2;
+    bool summery_status = 3;
+    int64 drugorder_id = 4;
+    string patient_id = 5;
+    int32 firstDoseStatus=6;
+    int32 secondDoseStatus=7;
+    int32 thirdDoseStatus=8;
+    int32 fourthDoseStatus=9;
+    
+}
+
+
+
+message DrugSummeryOfADrugResultParam{
+    string patientId =1;
+    string startDate=2;
+    string endDate=3;
+    
+    
+}
+
+message DrugSummeryOfADrugResultList{
+    repeated DrugSummeryOfADrugResult drugsummery = 1;
+}
+
+message DrugSummeryListResult{
+    repeated DrugSummeryResult drugsummery = 1;
+}

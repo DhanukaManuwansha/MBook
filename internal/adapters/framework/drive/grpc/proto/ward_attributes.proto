@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message Ward {
+	int64 ward_id=1;
+	string ward_type = 2;
+	int64 tot_of_patient = 3; 
+	string period = 4;
+	string created_at = 5;
+	int64 center_id = 6;
+	int32 ward_no=7;
+}
+
+message GetWardsByCenterRequest {
+	int64 center_id = 1;
+}
+
+message GetWardsByCenterResponse {
+	repeated Ward wards = 1;
+}

@@ -1,0 +1,21 @@
+version: 1
+packages:
+  - path: "./internal/adapters/framework/driven/db/sqlc"
+    name: "db"
+    engine: "postgresql"
+    schema: "./db/migration"
+    queries: "./internal/adapters/framework/driven/db/query"
+    emit_json_tags: true
+    emit_prepared_queries: false
+    emit_interface: false
+    emit_exact_table_names: true
+
+  - path: "./internal/adapters/framework/driven/db/sqlc/patientDB_sqlc"
+    name: "patientdb"
+    engine: "postgresql"
+    schema: "./db/migration/patient"
+    queries: "./internal/adapters/framework/driven/db/query/patient_query"
+    emit_json_tags: true
+    emit_prepared_queries: false
+    emit_interface: false
+    emit_exact_table_names: true

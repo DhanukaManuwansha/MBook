@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message GetLatestPrescriptionsParameters{
+    string patientId = 1;
+}
+
+
+
+message PrescriptionResult{
+    int64 prescription_id = 1;
+    string pres_date = 2;
+    string pres_time = 3;
+    bool active_status = 4;
+    string notes = 5; 
+    string sketch = 6; 
+    string patient_id = 7; 
+    int64 doctor_id = 8; 
+
+
+}
+
+message LatestPrescriptionResult{
+    repeated PrescriptionResult prescriptions = 1;
+}

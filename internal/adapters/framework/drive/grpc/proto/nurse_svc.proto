@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+import "nurse_attributes.proto";
+
+service NurseServices {
+	rpc RegisterNurse(RegisterNurseRequest) returns (RegisterNurseResponse) {}
+	rpc GetAllNurses(GetAllNursesRequest) returns (GetAllNursesResponse) {}
+	rpc GetNurseFilter(GetNurseFilterRequest) returns (GetAllNursesResponse) {}
+	rpc UpdateNurse(UpdateNurseRequest) returns (UpdateNurseResponse) {}
+	
+}

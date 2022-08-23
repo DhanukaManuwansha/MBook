@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+import "ward_attributes.proto";
+
+option go_package = "./pb";
+
+service WardService {
+	rpc GetWardsByCenter(GetWardsByCenterRequest) returns (GetWardsByCenterResponse) {}
+}

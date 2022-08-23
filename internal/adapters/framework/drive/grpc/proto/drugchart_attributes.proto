@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message GetDrugChartParameters{
+    string patientId = 1;
+}
+
+message DrugResult{
+    int64 drugId = 1;
+    string drugName = 2;
+    string scientficName = 3;
+    string drugCategory = 4;
+    string storageTemperature = 5;
+    string dangerousLevel = 6;
+    string manufacture = 7;
+    int64 noOfUnits = 8;
+    string note = 9;
+
+
+}
+
+message DrugResultForDashBoard{
+    string drugName = 1;
+    string dose = 2;
+    string dosage = 3;
+    int32 frequency = 4;
+    string givenDate =5;
+    string giveUntill=6;
+
+
+}
+
+message DrugChartResult{
+    repeated DrugResult drugs = 1;
+}
+
+message DrugChartResultForDashBoard{
+    repeated DrugResultForDashBoard drugs = 1;
+}
+
+
+message DrugChartForNurseDeskResult{
+    string drugName =1;
+    string dose = 2;
+    string dosage = 3;
+    int32 frequency = 4;
+    string givenDate =5;
+    string giveUntill=6;
+    int64 drugsummery_id = 7;
+    string summery_date = 8;
+    bool summery_status = 9;
+    int32 firstDoseStatus=10;
+    int32 secondDoseStatus=11;
+    int32 thirdDoseStatus=12;
+    int32 fourthDoseStatus=13;
+    int64 drugorder_id = 14;
+    string patient_id = 15;
+    
+}
+
+message DrugChartForNurseDeskResultList{
+    repeated DrugChartForNurseDeskResult morningList = 1;
+    repeated DrugChartForNurseDeskResult noonList = 2;
+    repeated DrugChartForNurseDeskResult eveList = 3;
+    repeated DrugChartForNurseDeskResult nightList = 4;
+}
+
+message DrugChartForNurseDesktParam{
+    string patientId =1;
+    string date=2;
+    
+    
+}

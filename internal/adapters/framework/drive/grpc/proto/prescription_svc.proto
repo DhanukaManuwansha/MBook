@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+import "prescription_attributes.proto";
+
+option go_package = "./pb";
+ 
+service PrescriptionService{
+
+    rpc GetLatestPrescriptions(GetLatestPrescriptionsParameters) returns (LatestPrescriptionResult){}
+    
+
+
+}

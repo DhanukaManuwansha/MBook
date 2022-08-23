@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+import "center_attributes.proto";
+
+service CenterServices {
+	rpc GetAllCenters(GetAllCetersRequest) returns (GetAllCetersResponse) {}
+}

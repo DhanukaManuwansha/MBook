@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message GetBedsbyWardRequest {
+	int64 ward_id = 1;
+}
+
+message GetBedsbyWardResult {
+	 int64 bedTicket_id = 1;
+	 int32 bed_no =2;
+	 string patientId=3;
+
+}
+
+message GetBedsbyWardResponse {
+	repeated GetBedsbyWardResult bedTicket = 1;
+}

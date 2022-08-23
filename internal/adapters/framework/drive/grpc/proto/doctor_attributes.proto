@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message Doctor {
+	int64 doctor_id = 1;
+	string reg_number = 2;
+	string dob = 3;
+	string user_id = 4;
+	string user_name = 5;
+	string first_name = 6;
+	string last_name = 7;
+	string nic = 8;
+	string tell_no = 9;
+	string address = 10;
+	string user_email = 11;
+	string user_pwd = 12;
+	bool is_email_verified = 13;
+	bool is_tell_no_verified = 14;
+}
+
+message RegisterDoctorRequest {
+	string reg_number = 1;
+	string dob = 2;
+	string user_id = 3;
+	string user_name = 4;
+	string first_name = 5;
+	string last_name = 6;
+	string nic = 7;
+	string tell_no = 8;
+	string address = 9;
+	string user_email = 10;
+	string user_pwd = 11;
+	bool is_email_verified = 12;
+	bool is_tell_no_verified = 13;
+}
+
+message RegisterDoctorResponse {
+	int64 doctor_id = 1;
+	string reg_number = 2;
+	string user_id = 3;
+	string message = 4;
+	int64 status = 5;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+import "center_admin_attributes.proto";
+
+service CenterAdminServices {
+	rpc RegisterCenterAdmin(RegisterCenterAdminRequest) returns (RegisterCenterAdminResponse) {}
+	rpc GetAllCenterAdmins(GetAllCenterAdminsRequest) returns (GetAllCenterAdminsResponse) {}
+	rpc GetAllCenterAdminsByName(GetAllCenterAdminsByNameRequest) returns (GetAllCenterAdminsResponse) {}
+}

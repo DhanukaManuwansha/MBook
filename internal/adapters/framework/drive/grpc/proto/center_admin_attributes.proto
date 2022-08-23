@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message CenterAdmin {
+	int64 centerAdmin_id = 1;
+	int64 center_id = 2;
+	string user_id = 3;
+	string user_name = 4;
+	string first_name = 5;
+	string last_name = 6;
+	string nic = 7;
+	string tell_no = 8;
+	string address = 9;
+	string user_email = 10;
+	string user_pwd = 11;
+	bool is_email_verified = 12;
+	bool is_tell_no_verified = 13;
+}
+
+message RegisterCenterAdminRequest {
+	string user_id = 1;
+	int64 center_id = 2;
+	string user_name = 3;
+	string first_name = 4;
+	string last_name = 5;
+	string nic = 6;
+	string tell_no = 7;
+	string address = 8;
+	string user_email = 9;
+	string user_pwd = 10;
+	bool is_email_verified = 11;
+	bool is_tell_no_verified = 12;
+}
+
+message RegisterCenterAdminResponse {
+	int64 centerAdmin_id = 1;
+	string user_id = 2;
+	string message = 5;
+	int64 status = 6;
+}
+
+message GetAllCenterAdminsRequest {
+	int64 center_id = 1;
+}
+
+message GetAllCenterAdminsByNameRequest {
+	int64 center_id = 1;
+	string name =2;
+}
+
+message GetAllCenterAdminsResponse {
+	repeated CenterAdmin centerAdmins = 1;
+}

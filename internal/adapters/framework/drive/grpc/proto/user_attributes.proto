@@ -1,0 +1,80 @@
+/* Thaveesha - 02/06/2022 */
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message User {
+	string user_id = 1;
+	string user_name = 2;
+	string first_name = 3;
+	string last_name = 4;
+	string nic = 5;
+	string tell_no = 6;
+	string address = 7;
+	string user_email = 8;
+	string user_pwd = 9;
+	bool is_email_verified = 10;
+	bool is_tell_no_verified = 11;
+}
+
+message RegisterUserRequest {
+	string user_id = 1;
+	string user_name = 2;
+	string first_name = 3;
+	string last_name = 4;
+	string nic = 5;
+	string tell_no = 6;
+	string address = 7;
+	string user_email = 8;
+	string user_pwd = 9;
+	bool is_email_verified = 10;
+	bool is_tell_no_verified = 11;
+}
+
+message RegisterUserResponse {
+	string value = 1;
+}
+
+message GetUserByNameRequest {
+	string user_name = 1;
+}
+
+message GetUserByNameResponse {
+	string user_id = 1;
+	string user_name = 2;
+	string first_name = 3;
+	string last_name = 4;
+	string nic = 5;
+	string tell_no = 6;
+	string address = 7;
+	string user_email = 8;
+	string user_pwd = 9;
+	bool is_email_verified = 10;
+	bool is_tell_no_verified = 11;
+}
+
+message GetUserByNICRequest {
+	string nic = 1;
+}
+
+message GetUserByNICResponse {
+	string user_id = 1;
+	string user_name = 2;
+	string first_name = 3;
+	string last_name = 4;
+	string nic = 5;
+	string tell_no = 6;
+	string address = 7;
+	string user_email = 8;
+	string user_pwd = 9;
+	bool is_email_verified = 10;
+	bool is_tell_no_verified = 11;
+}
+
+message GetAllUsersRequest {}
+
+message GetAllUsersResponse {
+	repeated User users = 1;
+}

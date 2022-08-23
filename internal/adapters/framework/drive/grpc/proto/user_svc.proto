@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+import "user_attributes.proto";
+
+option go_package = "./pb";
+
+service UserService {
+	rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse) {}
+	rpc GetUserByName(GetUserByNameRequest) returns (GetUserByNameResponse) {}
+	rpc GetUserByNIC(GetUserByNICRequest) returns (GetUserByNICResponse) {}
+	rpc GetAllUsers(GetAllUsersRequest) returns (GetAllUsersResponse) {} 
+	rpc GetAllUsersByNames(GetUserByNameRequest) returns (GetAllUsersResponse) {} 
+}

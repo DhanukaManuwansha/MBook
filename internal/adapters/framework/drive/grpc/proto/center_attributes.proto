@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message GetAllCetersRequest {
+	
+}
+message Center {
+	int64 centerId = 1;
+    string centerName =2;
+    string address = 3;
+    string tellNo =4;
+    string email =5;
+    string webSite =6;
+    bool activeStatus=7;
+    bool onlineStatus=8;
+    int64 centerTypeId=9;
+}
+
+message GetAllCetersResponse{
+    repeated Center centers = 1;
+}

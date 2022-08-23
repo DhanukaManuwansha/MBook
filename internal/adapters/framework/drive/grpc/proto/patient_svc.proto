@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pb;
+
+import "patient_attributes.proto";
+
+
+option go_package = "./pb";
+ 
+service PatientService{
+
+    rpc GetPatients(GetPatientsParameters) returns (patientListResult){}
+    rpc GetPatientsByNIC(GetPatientsByNICParameters) returns (patientListResult){}
+    rpc GetPatientsByTellNo(GetPatientsByTellNoParameters) returns (patientListResult){}
+    rpc GetPatientsByName(GetPatientsByNameParameters) returns (patientListResult){}
+    rpc GetPatientById(GetPatientsByIDParameters) returns (PatientResult){}
+   
+
+
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pb;
+
+import "drugsummery_attributes.proto";
+
+option go_package = "./pb";
+ 
+service DrugSummeryService{
+
+    rpc GetDrugSummery(GetDrugSummeryParameters) returns (DrugSummeryListResult){}
+    rpc UpdateDrugSummery(DrugSummeryUpdateParam) returns (DrugSummeryUpdateResult){}
+    rpc GetDrugSummeryOfADrug(DrugSummeryOfADrugResultParam) returns (DrugSummeryOfADrugResultList){}
+
+    
+
+
+}

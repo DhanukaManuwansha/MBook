@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message AddedAdmitPatientResult{
+    int64 value = 1;
+}
+
+message AdmitPatientParameters{
+    string patient_id = 1;
+    string center_id = 2;
+    string created_at = 3;
+}
+

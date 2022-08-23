@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+import "nurseNote_attributes.proto";
+
+option go_package = "./pb";
+ 
+service NurseNoteService{
+
+    rpc UpdateNurseNote(UpdateNurseNoteParameters) returns (UpdatedNurseNoteResult){}
+    rpc getAllNurseNotes(PatientIdParam) returns (getAllNurseNotesResult){}
+    rpc AddNurseNote(AddNurseNoteParameters) returns (AddedNurseNoteResults){}
+    rpc getLatestNurseNotes(PatientIdParam) returns (getAllLatestNurseNotesResult){}
+
+
+}

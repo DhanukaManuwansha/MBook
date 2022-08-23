@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package pb;
+
+import "observation_attributes.proto";
+
+option go_package = "./pb";
+ 
+service ObservationService{
+
+    rpc AddObservation(AddObservationParameters) returns (AddedObservationResult){}
+    rpc GetObservationById(getObservationById) returns (ObservationResult) {}
+    rpc UpdateObservation(UpdateObservationParameters) returns (UpdatedObservationResult){}
+    rpc getAllObservations(PatientIdParameter) returns (getAllObservationsResult){}
+    rpc getAllBPSis(PatientIdParameter) returns (getAllBPResult){}
+    rpc getAllBPDia(PatientIdParameter) returns (getAllBPResult){}
+    rpc getAllPR(PatientIdParameter) returns (getAllPRResult){}
+    rpc getAllRR(PatientIdParameter) returns (getAllRRResult){}
+    rpc getAllTemp(PatientIdParameter) returns (getAllTempResult){}
+
+
+}
+
+//command for generating go proto file
+// protoc --go-grpc_out=require_unimplemented_servers=false:internal/adapters/framework/drive/grpc --proto_path=internal/adapters/framework/drive/grpc/proto internal/adapters/framework/drive/grpc/proto/observation_svc.proto

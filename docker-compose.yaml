@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:14.2-alpine
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=Medbook@1234NTEC
+      - POSTGRES_DB=medbookDB
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    environment:
+      - DB_SOURCE=postgres://root:Medbook@1234NTEC@postgres:5432/medbookDB?sslmode=disable
+
+    depends_on:
+      - postgres
+    entrypoint:
+      [
+        "/app/wait-for.sh",
+        "postgres:5432",
+        "--",
+        "/app/start.sh"
+      ]
+    command: [ "/app/main" ]

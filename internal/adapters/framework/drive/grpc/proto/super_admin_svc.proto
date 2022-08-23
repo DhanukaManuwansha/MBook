@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package pb;
+
+import "super_admin_attributes.proto";
+
+option go_package = "./pb";
+
+service SuperAdminServices {
+	rpc RegisterSuperAdmin(RegisterSuperAdminRequest) returns (RegisterSuperAdminResponse) {}
+	// rpc GetSuperAdmins(GetSuperAdminsRequest) returns (GetSuperAdminsResponse) {}
+}

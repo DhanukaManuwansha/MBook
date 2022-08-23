@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message Nurse {
+	int64 nurse_id = 1;
+	string reg_number = 2;
+	string dob = 3;
+	string nurse_rank = 4;
+	bool active_status = 5;
+	int64 center_id = 6;
+	string user_id = 7;
+	string user_name = 8;
+	string first_name = 9;
+	string last_name = 10;
+	string nic = 11;
+	string tell_no = 12;
+	string address = 13;
+	string user_email = 14;
+	bool is_email_verified = 15;
+	bool is_tell_no_verified = 16;
+}
+
+message RegisterNurseRequest {
+	string reg_number = 1;
+	string dob = 2;
+	string nurse_rank = 3;
+	bool active_status = 4;
+	int64 center_id = 5;
+	string user_id = 6;
+	string user_name = 7;
+	string first_name = 8;
+	string last_name = 9;
+	string nic = 10;
+	string tell_no = 11;
+	string address = 12;
+	string user_email = 13;
+	string user_pwd = 14;
+	bool is_email_verified = 15;
+	bool is_tell_no_verified = 16;
+}
+
+message UpdateNurseRequest {
+	string reg_number = 1;
+	string dob = 2;
+	string nurse_rank = 3;
+	bool active_status = 4;
+	int64 center_id = 5;
+	string user_id = 6;
+	string user_name = 7;
+	string first_name = 8;
+	string last_name = 9;
+	string nic = 10;
+	string tell_no = 11;
+	string address = 12;
+	string user_email = 13;
+	string user_pwd = 14;
+	bool is_email_verified = 15;
+	bool is_tell_no_verified = 16;
+	int64 nurseId = 17;
+}
+message UpdateNurseResponse {
+	string message = 1;
+	int64 status = 2;
+}
+
+message RegisterNurseResponse {
+	int64 nurse_id = 1;
+	string reg_number = 2;
+	string nurse_rank = 3;
+	string user_id = 4;
+	string message = 5;
+	int64 status = 6;
+}
+
+message GetAllNursesRequest {
+	int64 center_id = 1;
+}
+
+message GetAllNursesResponse {
+	repeated Nurse nurses = 1;
+}
+
+message GetNurseFilterRequest {
+	int64 center_id = 1;
+	string value = 2;
+}

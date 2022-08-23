@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message AddedObservationResult{
+    int64 value = 1;
+    int64 status =2;
+    string message =3;
+}
+
+message UpdatedObservationResult{
+    int64 status =1;
+    string message =2;
+}
+
+message AddObservationParameters{
+    string observationDateTime = 1;
+    float bpSis = 2;
+    float bpDia = 3;
+    float pr = 4;
+    float rr = 5;
+    float temp = 6;
+    string notes = 7;
+    string patientId = 8;
+    int64 nurseId = 9;
+
+}
+message UpdateObservationParameters{
+    int64 observationId = 1;
+    string observationDateTime = 2;
+    float bpSis = 3;
+    float bpDia = 4;
+    float pr = 5;
+    float rr = 6;
+    float temp = 7;
+    string notes = 8;
+    string patientId = 9;
+    int64 nurseId = 10;
+
+}
+
+message ObservationResult{
+    int64 observationId = 1;
+    string observationDateTime = 2;
+    float bpSis = 3;
+    float bpDia = 4;
+    float pr = 5;
+    float rr = 6;
+    float temp = 7;
+    string notes = 8;
+    string patientId = 9;
+    int64 nurseId = 10;
+
+}
+
+message getObservationById{
+    int64 obseravationId = 1;
+}
+
+message parameterless{
+}
+
+message PatientIdParameter{
+    string patientId = 1;
+}
+
+
+message getAllObservationsResult{
+    repeated ObservationResult observations = 1;
+}
+
+message getAllBPResult{
+    repeated float bpValues = 1;
+}
+
+message getAllPRResult{
+    repeated float prValues = 1;
+}
+
+message getAllRRResult{
+    repeated float rrvalues = 1;
+}
+
+message getAllTempResult{
+    repeated float tempValues = 1;
+}
+//command for generating go proto file
+//protoc --go_out=internal/adapters/framework/drive/grpc --proto_path=internal/adapters/framework/drive/grpc/proto internal/adapters/framework/drive/grpc/proto/observation_attributes.proto

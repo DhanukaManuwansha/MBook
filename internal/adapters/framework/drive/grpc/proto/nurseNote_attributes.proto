@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+message PatientIdParam{
+    string patientId = 1;
+}
+
+message NurseNoteResult{
+    int64 nursingNoteId = 1;
+    string remark = 2;
+    string nursingCare = 3;
+    string notesDateTimer = 4;
+    int64 nurse_id = 5;
+    string patient_id = 6;
+    
+
+}
+message LatestNurseNoteResult{    
+    string remark = 1;
+    string nursingCare = 2;
+    string notesDateTimer = 3;
+    string nurseName = 4;
+}
+
+message getAllLatestNurseNotesResult{
+    repeated LatestNurseNoteResult nurseNotes = 1;
+}
+
+message AddedNurseNoteResults{
+    int64 value = 1;
+    int64 status =2;
+    string message =3;
+
+}
+message UpdatedNurseNoteResult{
+    int64 status =1;
+    string message =2;
+}
+message AddNurseNoteParameters{
+
+    string remark = 1;
+    string nursingCare = 2;
+    string notesDateTimer = 3;
+    string createdAt = 4;
+    string nurse_id = 5;
+    string patient_id = 6;
+
+}
+
+message getAllNurseNotesResult{
+    repeated NurseNoteResult nurseNotes = 1;
+}
+
+message UpdateNurseNoteParameters{
+    int64 nursingNoteId = 1;
+    string remark = 2;
+    string nursingCare = 3;
+    string notesDateTimer = 4;
+    int64 nurse_id = 5;
+    string patient_id = 6;
+
+}

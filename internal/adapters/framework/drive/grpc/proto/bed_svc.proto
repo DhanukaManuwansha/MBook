@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "./pb";
+
+import "bed_attributes.proto";
+
+service BedService {
+	rpc GetBedsByWard(GetBedsbyWardRequest) returns (GetBedsbyWardResponse) {}
+}
